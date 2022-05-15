@@ -1,0 +1,270 @@
+/*general*/
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* 100 view port height soit 100% de la hauteur de l'écran */
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/*header*/
+#burgers{
+    display: none;
+}
+ nav {
+     position: relative;
+     display: flex;
+     justify-content: flex-end;
+     padding: 5px;
+ }
+ nav i {
+     font-size: 1.5em;
+ }
+ nav label {
+     color: grey;
+     border: 1px solid white;
+     border-radius: 3px;
+     padding:0  0.5rem;
+ }
+ nav:hover label{
+     color: white;
+ }
+ #burgers:checked ~ #menu {
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     color: black;
+     background-color: white;
+ }
+#menu {
+     display: none; 
+     width: 100%;
+     position: absolute;
+     left: 0;
+ }
+ #menu li {
+    margin: 5px 0;
+    list-style: none;
+ }
+ #menu li i {
+     margin-right: 10px;
+ }
+ #menu li:hover a{
+     background-color: rgba(158, 158, 158, 0.664);
+     text-decoration: none;
+     padding: .2rem;
+     border-radius: 3px;
+     color: black;
+ }
+
+
+#header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: url("/assets/img/background.jpg") no-repeat center/cover;
+    height: 80%;
+}
+#header h1 {
+    color: white;
+}
+#header h3 {
+    font-size: 1rem;
+    margin-bottom: 10rem;
+    color: white;
+    
+}
+#form {
+    display: flex;
+    flex-direction: column; 
+    padding: 0.5rem;
+}
+#form form {
+    display: flex;
+    flex-direction: column;
+    padding:0 0.5rem;
+    background-color: rgba(206, 203, 203, 0.699);
+}
+#form form #adresse{
+    padding-left: 0.5em;
+    font-size: 1rem;
+    margin: 0.3rem 0;
+    border: none;
+    border-radius: 3px;
+}
+input[type="date"]::before{
+    content: attr(placeholder)" : ";
+    white-space: pre;
+ }
+ input[type="date"]:focus::before {
+    content:""!important;
+ }
+#submit{
+    font-size: 0.8rem;
+    padding: 0.8rem 0;
+    background-color: rgba(3, 197, 3, 0.61);
+    border: none;
+    color: white;
+}
+
+/*voiture*/
+
+#resultat {
+padding: 1.5rem 0 0 1rem;
+font-weight: 200;
+}
+#resultat strong{
+    padding-right: 1rem;
+}
+#choix {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 2rem;
+    padding-right: 1rem;
+}
+#classement {
+    padding: .5rem .6rem;
+    border-radius: 3px;
+    border: rgb(180, 180, 180) solid 1px;
+}
+#choix:hover #classement{
+    background-color: rgba(184, 184, 184, 0.767);
+}
+ .groupe{
+     display: flex;
+     align-items: center;
+     padding-bottom: 3rem;
+     position: relative;
+ }
+ #descriptif input {
+     font-size: .8rem;
+     margin-right: 1rem;
+     background-color: rgb(50, 165, 50);
+     color: white;
+     padding: .5rem .8rem;
+     border-radius: 3px;
+     border: none;
+     cursor: pointer;
+ }
+ #description {
+     display: none;
+ }
+
+
+
+
+.carousel{
+    width: 50%;
+    margin:0 auto;     
+}
+.carousel-item img {
+    width: 100%;   
+    height: auto;
+}
+.groupe .right{
+    color: black;
+    position: absolute;
+    font-size: 2rem;
+    right: -2rem;
+}
+.groupe .left{
+    color: black;
+    position: absolute;
+    font-size: 2rem;
+    left: -2rem;
+}
+
+/*footer*/
+footer{
+    width: 80%;
+    margin: 0% auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 6rem ;
+}
+#blabla {
+    width :50%;
+}
+#image {
+    width : 50%;
+    margin-right: 2rem;
+}
+#blabla {
+    width: 50%;
+    margin-bottom: 6rem;
+}
+#image img{
+   width  : 100%;
+    height: auto;
+}
+
+/*tablette*/
+@media screen and (min-width:980px) {
+    #formulaire {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        height : 100vh;   
+    }
+    #form{
+        padding: 0 5rem;
+    }
+    #form form {
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 1rem;   
+        background-color: rgba(206, 203, 203, 0.699);
+    }
+    footer{
+        width: 40%;
+    }
+}
+
+/*desktop*/
+@media screen and (min-width:1200px) {
+    #formulaire {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        height : 100vh;   
+    }
+    #form{
+        flex-direction: row;
+        padding: 0 5rem;
+    }
+    #form form {
+        flex-direction: row;
+        justify-content: space-between;  
+        gap: 1rem; 
+        background-color: rgba(206, 203, 203, 0.699);
+    }
+    #submit {
+        padding: 0 3rem;
+    }
+
+    #voiture {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        width: 80%;
+    }
+    .carousel {
+        width: 30%;
+    }
+    #descriptif{
+        margin-left: 3rem;
+    }
+    #description {
+        display: block;
+    }
+    #description h3 {
+        font-size: 1.2rem;
+    }
+    footer{
+        width: 30%;
+    }
+}
